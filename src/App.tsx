@@ -1,12 +1,12 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { AppContextProvider } from 'state'
 
 function App() {
   return (
-    <div className="App">
-      APP
-    </div>
+    <AppContextProvider>
+      <div className="App">
+        APP
+      </div>
+    </AppContextProvider>
   )
 }
 
