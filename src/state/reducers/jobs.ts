@@ -1,5 +1,3 @@
-import { TAction, TJob, TReducer } from 'types'
-
 type TJobsState = { data: [], search?: string }
 
 type TSetJobData = TAction<'SET_JOB_DATA', TJob[]>

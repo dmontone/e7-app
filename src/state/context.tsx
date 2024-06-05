@@ -1,5 +1,4 @@
 import { createContext, Dispatch, FC, ReactNode, useReducer } from 'react'
-import { ExtractAllReducerActions, TJob } from 'types'
 import * as Reducers from './reducers'
 
 const ReducersList = Object.keys(Reducers).filter(item => !!item).map(item => Reducers[item as keyof typeof Reducers])
