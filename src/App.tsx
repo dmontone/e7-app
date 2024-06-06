@@ -1,4 +1,4 @@
-import { Icon } from 'components'
+import { Icon, LandingPage } from 'components'
 import { GlobalStyles } from 'global.styles'
 import { AppContextProvider } from 'state'
 import { ThemeProvider } from 'styled-components'
@@ -9,8 +9,10 @@ function App() {
     <AppContextProvider>
       <ThemeProvider theme={Theme}>
         <>
-        <GlobalStyles />
-        <Icon type='search' />
+          <GlobalStyles />
+          <LandingPage
+            title={'trabalhe no elo7'}
+          />
         </>
       </ThemeProvider>
     </AppContextProvider>
