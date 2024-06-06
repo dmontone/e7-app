@@ -2,17 +2,12 @@ import 'styled-components'
 
 type map<L extends string, T> = { [k in L]: T }
 
-declare type tokenSizes = 'sm' | 'md' | 'lg' | 'xl' | 'xx'
-declare type tokenWeights = 'regular' | 'semibold' | 'bold'
-declare type tokenAligns = 'left' | 'center' | 'right'
+declare type tokenWeights = 'normal' | 'semibold' | 'bold'
 
 type text = {
-  variants?: 'title' | 'subtitle' | 'heading' | 'body'
   font: string,
-  fontSize: map<tokenSizes, number>,
-  lineHeight: map<tokenSizes, number>,
-  weight: map<tokenWeights, number>,
-  align: map<tokenAligns, tokenAligns>
+  size: (a: 8 | 10 | 12 | 14 | 16) => string
+  weight: { [k in tokenWeights]: number }
 }
 
 declare module 'styled-components' {
