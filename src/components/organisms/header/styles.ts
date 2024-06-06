@@ -28,3 +28,8 @@ export const HeroImage = styled.div<{ img: string }>`
   z-index: 1;
   opacity: 0.7;
 `
+
+export const Content = styled.div`
+  padding: 32px 16px 40px 16px;
+  text-align: center;
+`

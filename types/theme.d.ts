@@ -3,11 +3,12 @@ import 'styled-components'
 type Map<L, T> = { [k in L]: T }
 
 declare type TokenWeights = 'normal' | 'semibold' | 'bold'
-declare type TokenColors = 'white' | 'black'
+declare type TokenColors = 'white' | 'black' | 'gray'
 
 type text = {
   font: string,
-  size: (a: 8 | 10 | 12 | 14 | 16) => string
+  size: (size: 8 | 10 | 12 | 14 | 16) => string
+  lineHeight: (height: number) => string
   weight: Map<TokenWeights, number>
 }
 
