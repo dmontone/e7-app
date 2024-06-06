@@ -3,7 +3,7 @@ import 'styled-components'
 type Map<L, T> = { [k in L]: T }
 
 declare type TokenWeights = 'normal' | 'semibold' | 'bold'
-declare type TokenColors = 'white' | 'black' | 'gray'
+declare type TokenColors = 'white' | 'black' | 'gray' | 'cyan'
 
 type text = {
   font: string,
