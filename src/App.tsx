@@ -1,4 +1,4 @@
-import { Button } from 'components/atoms/button'
+import { Icon } from 'components'
 import { GlobalStyles } from 'global.styles'
 import { AppContextProvider } from 'state'
 import { ThemeProvider } from 'styled-components'
@@ -10,7 +10,7 @@ function App() {
       <ThemeProvider theme={Theme}>
         <>
         <GlobalStyles />
-        <Button onClick={console.log}>Button element</Button>
+        <Icon type='search' />
         </>
       </ThemeProvider>
     </AppContextProvider>

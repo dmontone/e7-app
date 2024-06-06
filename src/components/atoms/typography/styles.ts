@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Body = styled.p`
   font-size: ${({ theme }) => theme.text.fontSize.sm}px;
