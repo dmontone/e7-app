@@ -1,17 +1,24 @@
 import 'styled-components'
 
-type map<L extends string, T> = { [k in L]: T }
+type Map<L, T> = { [k in L]: T }
 
-declare type tokenWeights = 'normal' | 'semibold' | 'bold'
+declare type TokenWeights = 'normal' | 'semibold' | 'bold'
+declare type TokenColors = 'white' | 'black'
 
 type text = {
   font: string,
   size: (a: 8 | 10 | 12 | 14 | 16) => string
-  weight: { [k in tokenWeights]: number }
+  weight: Map<TokenWeights, number>
 }
+
+type colors = Map<TokenColors, string>
 
 declare module 'styled-components' {
   interface DefaultTheme {
     text: text
+    colors: colors
   }
+
+  type Weights = TokenWeights
+  type Colors = TokenColors
 }
