@@ -9,6 +9,7 @@ export type TTypography = {
   size?: 8 | 10 | 12 | 14 | 16
   weight?: Weights
   color?: Colors
+  lineHeight?: number
 }
 
 export const Typography: FC<TTypography> = ({ text, ...props }) =>

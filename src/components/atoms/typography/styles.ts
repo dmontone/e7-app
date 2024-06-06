@@ -14,13 +14,15 @@ export const Wrapper = styled.div.attrs<Omit<TTypography, 'text'>>(({ variant, l
     size = 8,
     theme,
     weight = 'normal',
-    color = 'black'
+    color = 'black',
+    lineHeight = 1
   }) => {
     const { text, colors } = theme
     
     return css`
       color: ${colors[color]};
       font-size: ${text.size(size)};
+      line-height: ${text.lineHeight(size * 1.5)};
       font-weight: ${text.weight[weight]};
     `
   }}
