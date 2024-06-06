@@ -1,22 +1,20 @@
 import { FC } from 'react'
 import * as S from './styles'
 import { Button, Icon, Typography } from 'components/atoms'
+import { Header } from 'components/organisms'
 
 type TLandingPage = {
-  title: string
+  header: {
+    title: string,
+    text: string,
+    cta: string,
+  }
 }
 
-export const LandingPage: FC<TLandingPage> = ({ title }) => {
+export const LandingPage: FC<TLandingPage> = ({ header }) => {
   return (
     <S.Wrapper>
-      {/* Header */}
-      <header>
-        <Typography variant='title' level={1} size={16} text={title} weight='bold' />
-        <Typography variant='text' text='Lorem ipsum dolor sit amet, consectetur adipigitscing elit. Curabitur et viverra orci. Praesent consequat dolor tellus, eget viverra risus hendrerit non. Sed rutrum condimentum maximus. Donec pellentesque libero eu eros sagittis.' size={8} />
-        <Button onClick={console.log}>
-          vagas em aberto <Icon type='chevron-right' />
-        </Button>
-      </header>
+      <Header {...header} />
 
       <main>
         {/* Section: Testimonial */}
