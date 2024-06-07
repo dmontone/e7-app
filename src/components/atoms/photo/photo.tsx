@@ -9,10 +9,10 @@ type TPhoto = {
   height: Dimensions
 }
 
-export const Photo: FC<TPhoto> = props => {
+export const Photo: FC<TPhoto> = ({ alt, ...props }) => {
   return (
     <S.Wrapper>
-      <img {...props} />
+      <img alt={alt} {...props} />
     </S.Wrapper>
   )
 }
