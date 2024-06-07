@@ -1,11 +1,11 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { RenderWithTheme } from 'test-utils'
-import { Photo } from 'components/atoms'
+import { MemberList } from 'components/molecules'
 import { Team } from './team'
 
-jest.mock('components/atoms', () => ({
-  ...jest.requireActual('components/atoms'),
-  Photo: jest.fn()
+jest.mock('components/molecules', () => ({
+  ...jest.requireActual('components/molecules'),
+  MemberList: jest.fn()
 }))
 
 describe('COMPONENT: ORGANISMS: Testimonial', () => {
@@ -17,6 +17,6 @@ describe('COMPONENT: ORGANISMS: Testimonial', () => {
       </RenderWithTheme>
     )
 
-    expect(Photo).toHaveBeenCalledTimes(4)
+    expect(MemberList).toHaveBeenCalled()
   })  
 })
