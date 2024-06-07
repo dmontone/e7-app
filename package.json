@@ -23,6 +23,7 @@
     "collectCoverageFrom": [
       "src/*/**/*.{ts,tsx}",
       "!src/theme/**/*.{ts,tsx}",
+      "!src/state/**/*.{ts,tsx}",
       "!src/**/index.{ts,tsx}",
       "!src/**/styles.{ts,tsx}"
     ],
