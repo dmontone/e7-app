@@ -1,6 +1,7 @@
 import { FC } from 'react'
-import { Wrapper } from './styles'
 import { Colors, Weights } from 'styled-components'
+import * as S from './styles'
+import { mapToDollar } from 'utils'
 
 export type TTypography = {
   text: string
@@ -13,6 +14,6 @@ export type TTypography = {
 }
 
 export const Typography: FC<TTypography> = ({ text, ...props }) =>
-  <Wrapper {...props}>
+  <S.Wrapper {...mapToDollar(props)}>
     {text}
-  </Wrapper>
+  </S.Wrapper>

@@ -13,7 +13,7 @@ export const Header: FC<THeader> = ({ title, text }) => {
   return (
     <S.Wrapper>
       <S.Hero>
-        <S.HeroImage img={bgHero} />
+        <S.HeroImage $img={bgHero} />
         <Typography variant='title' level={1} size={16} text={title} color={'white'} weight='bold' />
       </S.Hero>
       <S.Content>

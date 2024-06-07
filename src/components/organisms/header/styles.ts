@@ -16,10 +16,10 @@ export const Hero = styled.div`
   & > * { z-index: 2; }
 `
 
-export const HeroImage = styled.div<{ img: string }>`
+export const HeroImage = styled.div<{ $img: string }>`
   width: 100%;
   height: 100%;
-  background-image: url(${({ img }) => img});
+  background-image: url(${({ $img }) => $img});
   background-size: cover;
   background-position: center;
   position: absolute;
