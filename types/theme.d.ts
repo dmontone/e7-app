@@ -1,8 +1,12 @@
 import 'styled-components'
 
-type Map<L, T> = { [k in L]: T }
-
 declare module 'styled-components' {
+  type Map<L, T> = { [k in L]: T }
+
+  type MapToDollar<T> = {
+    [K in keyof T as `$${K}`]: T[K]
+  }
+
   type Weights = 'normal' | 'semibold' | 'bold'
   type Colors = 'white' | 'black' | 'gray' | 'lightGray' | 'darkGray' | 'cyan'
   type Dimensions = 'auto' | '100%' | number
