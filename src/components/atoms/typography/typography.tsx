@@ -11,9 +11,11 @@ export type TTypography = {
   weight?: Weights
   color?: Colors
   lineHeight?: number
+  subtitle?: string
 }
 
-export const Typography: FC<TTypography> = ({ text, ...props }) =>
+export const Typography: FC<TTypography> = ({ text, subtitle, ...props }) =>
   <S.Wrapper {...mapToDollar(props)}>
     {text}
+    {subtitle && <S.Subtitle>{subtitle}</S.Subtitle>}
   </S.Wrapper>

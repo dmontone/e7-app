@@ -8,13 +8,13 @@ declare module 'styled-components' {
   }
 
   type Weights = 'normal' | 'semibold' | 'bold'
-  type Colors = 'white' | 'black' | 'gray' | 'lightGray' | 'darkGray' | 'cyan'
+  type Colors = 'white' | 'black' | 'gray' | 'lightGray' | 'darkGray' | 'cyan' | 'yellow'
   type Dimensions = 'auto' | '100%' | number
 
   interface DefaultTheme {
     text: {
       font: string,
-      size: (size: 8 | 10 | 12 | 14 | 16) => string
+      size: (size: number) => string
       lineHeight: (height: number) => string
       weight: Map<TokenWeights, number>
     }
