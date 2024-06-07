@@ -1,7 +1,7 @@
 import { DefaultTheme } from 'styled-components'
 
 export const text: DefaultTheme['text'] = {
-  font: 'raleway, sans-serif',
+  font: '"figtree", sans-serif',
   size: (step) => step * 2 + 'px',
   lineHeight: (step) => step * 2 + 'px',
   weight: {
