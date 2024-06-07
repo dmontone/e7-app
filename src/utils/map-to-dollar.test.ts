@@ -1,12 +1,12 @@
 import { mapToDollar } from './map-to-dollar'
 
 describe('UTILS: mapToDollar', () => {
-  test('should map keys to $ prefix', () => {
+  it('should map keys to $ prefix', () => {
     const inputObject = { TEST_KEY_1: 'TEST_VALUE_1', TEST_KEY_2: 'TEST_VALUE_2', TEST_KEY_3: 'TEST_VALUE_3' }
     
     const result = mapToDollar(inputObject)
 
-    expect(result).toBe({
+    expect(result).toEqual({
       $TEST_KEY_1: 'TEST_VALUE_1',
       $TEST_KEY_2: 'TEST_VALUE_2',
       $TEST_KEY_3: 'TEST_VALUE_3',
@@ -18,6 +18,6 @@ describe('UTILS: mapToDollar', () => {
     
     const result = mapToDollar(inputObject)
 
-    expect(result).toBe({})
+    expect(result).toEqual({})
   })
 })

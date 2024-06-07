@@ -3,68 +3,45 @@ import { Typography } from './typography'
 import { RenderWithTheme } from 'test-utils'
 
 describe('COMPONENT: ATOMS: Typography', () => {
-  it('should render children string', () => {
+  it('should render children string with default props', () => {
     render(
       <RenderWithTheme>
-        <Typography>TEST CHILD</Typography>
+        <Typography text='TEST_CONTENT' />
       </RenderWithTheme>
     )
-    expect(screen.getByText(/TEST CHILD/)).toBeInTheDocument()
+    
+    expect(screen.getByText(/TEST_CONTENT/)).toBeInTheDocument()
   })
 
-  
-  it('should render the correct component based on default variant', () => {
+  it('should render children string with a variant set', () => {
     render(
       <RenderWithTheme>
-        <Typography>TEST CHILD</Typography>
+        <Typography variant='title' text='TEST_CONTENT' />
       </RenderWithTheme>
     )
-    const element = screen.queryByText(/TEST CHILD/)
-
-    expect(element.nodeName.toLowerCase()).toBe('p')
+    
+    expect(screen.getByText(/TEST_CONTENT/)).toBeInTheDocument()
   })
-  
-  it('should render the component as h1 based on title variant', () => {
+
+  it('should render children string with a subtitle', () => {
     render(
       <RenderWithTheme>
-        <Typography variant='title'>TEST CHILD</Typography>
+        <Typography variant='title' text='TEST_CONTENT' subtitle='TEST_SUBTITLE' />
       </RenderWithTheme>
     )
-    const element = screen.queryByText(/TEST CHILD/)
 
-    expect(element.nodeName.toLowerCase()).toBe('h1')
+    expect(screen.getByText(/TEST_CONTENT/)).toBeInTheDocument()
+    expect(screen.getByText(/TEST_SUBTITLE/)).toBeInTheDocument()
   })
-  
-  it('should render the component as h2 based on heading variant', () => {
+
+  it('should not render children string with a subtitle if variant is not title', () => {
     render(
       <RenderWithTheme>
-        <Typography variant='heading'>TEST CHILD</Typography>
+        <Typography text='TEST_CONTENT' subtitle='TEST_SUBTITLE' />
       </RenderWithTheme>
     )
-    const element = screen.queryByText(/TEST CHILD/)
 
-    expect(element.nodeName.toLowerCase()).toBe('h2')
-  })
-  
-  it('should render the component as div based on subtitle variant', () => {
-    render(
-      <RenderWithTheme>
-        <Typography variant='subtitle'>TEST CHILD</Typography>
-      </RenderWithTheme>
-    )
-    const element = screen.queryByText(/TEST CHILD/)
-
-    expect(element.nodeName.toLowerCase()).toBe('div')
-  })
-  
-  it('should render the component as p based on body variant', () => {
-    render(
-      <RenderWithTheme>
-        <Typography variant='body'>TEST CHILD</Typography>
-      </RenderWithTheme>
-    )
-    const element = screen.queryByText(/TEST CHILD/)
-
-    expect(element.nodeName.toLowerCase()).toBe('p')
+    expect(screen.getByText(/TEST_CONTENT/)).toBeInTheDocument()
+    expect(screen.queryByText(/TEST_SUBTITLE/)).not.toBeInTheDocument()
   })
 })

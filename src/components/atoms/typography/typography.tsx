@@ -17,5 +17,5 @@ export type TTypography = {
 export const Typography: FC<TTypography> = ({ text, subtitle, ...props }) =>
   <S.Wrapper {...mapToDollar(props)}>
     {text}
-    {subtitle && <S.Subtitle>{subtitle}</S.Subtitle>}
+    {props.variant === 'title' && subtitle && <S.Subtitle>{subtitle}</S.Subtitle>}
   </S.Wrapper>
