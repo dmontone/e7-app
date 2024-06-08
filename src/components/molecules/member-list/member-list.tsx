@@ -10,7 +10,7 @@ export const MemberList: FC<TMemberList> = ({ members }) => (
   <S.Wrapper>
     {members.map(member =>
       <S.Item key={member}>
-        <Photo src={member} alt={'Lorem Ipsum'} width={'100%'} height={'auto'} />
+        <Photo src={member} alt={'Lorem Ipsum'} width={'100%'} height={183} />
       </S.Item>
     )}
   </S.Wrapper>

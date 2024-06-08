@@ -5,14 +5,14 @@ import * as S from './styles'
 type TPhoto = {
   src: string
   alt: string
-  width: Dimensions
-  height: Dimensions
+  width?: Dimensions
+  height?: Dimensions
 }
 
-export const Photo: FC<TPhoto> = ({ alt, ...props }) => {
+export const Photo: FC<TPhoto> = ({ alt, src, width = 'auto', height = 'auto' }) => {
   return (
-    <S.Wrapper>
-      <img alt={alt} {...props} />
+    <S.Wrapper width={width} height={height}>
+      <img alt={alt} src={src} />
     </S.Wrapper>
   )
 }
