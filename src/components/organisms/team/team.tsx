@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Typography } from 'components/atoms'
+import { Section, Typography } from 'components/atoms'
 import { MemberList } from 'components/molecules'
 import * as S from './styles'
 import Member1 from './assets/member-1.jpg'
@@ -11,9 +11,9 @@ export const Team: FC = () => {
   const members: string[] = [Member1, Member2, Member3, Member4]
 
   return (
-    <S.Wrapper>
+    <Section bgColor='white'>
       <Typography variant='title' level={2} size={14} weight='semibold' text={'Conheça nosso time'} />
       <MemberList members={members} />
-    </S.Wrapper>
+    </Section>
   )
 }
