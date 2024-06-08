@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import * as S from './styles'
-import { Header, Team } from 'components/organisms'
-import { Testimonial } from 'components/organisms/testimonial/testimonial'
+import { Features, Header, Team, Testimonial } from 'components/organisms'
 
 export const LandingPage: FC = () => {
   return (
@@ -10,6 +9,8 @@ export const LandingPage: FC = () => {
       <main>
         <Testimonial />
         <Team />
+        <Features />
+
 
         {/* <div> Figure </div> */}
 

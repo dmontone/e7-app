@@ -8,7 +8,7 @@ declare module 'styled-components' {
   }
 
   type Weights = 'normal' | 'semibold' | 'bold'
-  type Colors = 'white' | 'black' | 'gray' | 'lightGray' | 'darkGray' | 'cyan' | 'yellow'
+  type Colors = 'white' | 'black' | 'gray' | 'lightGray' | 'darkGray' | 'cyan' | 'yellow' | 'lightYellow' | 'darkYellow'
   type Dimensions = 'auto' | '100%' | number
 
   interface DefaultTheme {
