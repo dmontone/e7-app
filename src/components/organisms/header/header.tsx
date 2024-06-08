@@ -1,18 +1,24 @@
 import { Button, Icon, Typography } from 'components/atoms'
-import { FC, MouseEvent } from 'react'
+import { FC, MouseEvent, useState } from 'react'
 import * as S from './styles'
 import bgHero from './assets/bg-hero.jpg'
 import { Separator } from 'components/atoms/separator'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/opacity.css'
 
 type THeader = {
   ctaOnClick: (e: MouseEvent) => void
 }
 
 export const Header: FC<THeader> = ({ ctaOnClick }) => {
+  const [ isImageLoaded, setImageLoaded ] = useState<boolean>(false)
+
   return (
     <S.Wrapper>
       <S.Hero>
-        <S.HeroImage $img={bgHero} />
+        <S.HeroImage isVisible={isImageLoaded}>
+          <LazyLoadImage src={bgHero} alt={'Lorem ipsum'} onLoad={() => setImageLoaded(true)} />
+        </S.HeroImage>
         <Typography variant='title' level={1} size={16} color={'white'} weight='bold' text={'trabalhe no elo7'} />
       </S.Hero>
       <S.Content>

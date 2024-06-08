@@ -11,22 +11,29 @@ export const Hero = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-  background: ${({ theme }) => theme.colors.black};
 
   & > * { z-index: 2; }
 `
 
-export const HeroImage = styled.div<{ $img: string }>`
-  width: 100%;
-  height: 100%;
-  background-image: url(${({ $img }) => $img});
-  background-size: cover;
-  background-position: center;
+export const HeroImage = styled.div<{ isVisible: boolean }>`
   position: absolute;
-  top: 0;
-  left:0;
-  z-index: 1;
-  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 260px;
+  background: ${({ theme }) => theme.colors.black};
+  opacity: ${({ isVisible }) => isVisible ? '1' : '0'};
+  transition: opacity 1s ease-out;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    opacity: 0.7;
+  }
 `
 
 export const Content = styled.div`
