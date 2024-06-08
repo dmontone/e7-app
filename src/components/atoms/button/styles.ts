@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   font-family: ${({ theme }) => theme.text.font};
   size: ${({ theme }) => theme.text.size(10)};
+  font-weight: ${({ theme }) => theme.text.weight.semibold};
   color: ${({ theme }) => theme.colors.cyan};
   display: flex;
   align-items: center;

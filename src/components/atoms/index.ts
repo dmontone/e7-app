@@ -1,4 +1,5 @@
 export * from './button'
 export * from './icon'
+export * from './illustration'
 export * from './photo'
 export * from './typography'
