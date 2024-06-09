@@ -16,8 +16,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test . --runInBand --collectCoverage --watchAll=false",
-    "test:watch": "react-scripts test . --runInBand --collectCoverage"
+    "test": "react-scripts test . --runInBand --collectCoverage --silent --watchAll=false",
+    "test:watch": "react-scripts test . --runInBand --collectCoverage --silent"
   },
   "jest": {
     "clearMocks": true,
