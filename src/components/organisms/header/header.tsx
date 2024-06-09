@@ -1,8 +1,7 @@
-import { Button, Icon, Typography } from 'components/atoms'
+import { Button, Icon, Separator, Typography } from 'components/atoms'
 import { FC, MouseEvent, useState } from 'react'
 import * as S from './styles'
 import bgHero from './assets/bg-hero.jpg'
-import { Separator } from 'components/atoms/separator'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/opacity.css'
 
