@@ -13,9 +13,11 @@ const initialState: IAppState = ReducersList.reduce((prev, current) =>
 
 type Actions = ExtractAllReducerActions<typeof ReducersList>
 
-const getActions = (dispatch: Dispatch<Actions>) => ({
+const getActions = (dispatch: Dispatch<Actions>): {[k: string]: (...args: any[]) => void} => ({
+  setJobFetching: (state: boolean) => dispatch({ type: 'SET_JOB_FETCHING', payload: state }),
   setJobData: (jobs: TJob[]) => dispatch({ type: 'SET_JOB_DATA', payload: jobs }),
-  setJobSearch: (query: string) => dispatch({ type: 'SET_JOB_DATA', payload: query }),
+  setJobError: (error: any) => dispatch({ type: 'SET_JOB_ERROR', payload: error }),
+  setJobSearch: (query: string) => dispatch({ type: 'SET_JOB_SEARCH', payload: query }),
 })
 
 const reducer = (state: IAppState, action: Actions): IAppState => 
