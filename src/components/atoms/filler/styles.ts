@@ -6,8 +6,7 @@ export const Wrapper = styled.div<{ isVisible: boolean }>`
   align-items: center;
   width: 100%;
   height: 260px;
-  opacity: ${({ isVisible }) => isVisible ? '1' : '0'};
-  transition: opacity 1s ease-out;
+  background-color: ${({theme}) => theme.colors.lightGray};
 
   img {
     width: 100%;
@@ -15,6 +14,7 @@ export const Wrapper = styled.div<{ isVisible: boolean }>`
     object-fit: cover;
     object-position: center;
     display: block;
-    opacity: 1;
+    opacity: ${({ isVisible }) => isVisible ? '1' : '0'};
+    transition: opacity 1s ease-out;
   }
 `
