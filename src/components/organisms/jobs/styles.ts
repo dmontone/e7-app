@@ -1,5 +1,5 @@
 import { device } from 'device.config'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Header = styled.div(() => ({
   display: 'flex',

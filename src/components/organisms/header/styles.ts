@@ -21,7 +21,7 @@ export const Hero = styled.div(() => ({
     height: 500
   },
 
-  ['& > *']: {
+  '*': {
     zIndex: 2
   }
 }))

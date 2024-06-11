@@ -1,4 +1,4 @@
-import styled, { Dimensions } from 'styled-components'
+import styled from 'styled-components'
 import { getSize } from 'utils'
 
 type TWrapper = {

@@ -1,5 +1,4 @@
 import { FC, useState } from 'react'
-import { Dimensions } from 'styled-components'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Loading } from 'components/atoms'
 import * as S from './styles'

@@ -1,4 +1,4 @@
-import styled, { css, MapToDollar } from 'styled-components'
+import styled, { MapToDollar } from 'styled-components'
 import { TTypography } from './typography'
 import { getSize } from 'utils'
 import { device } from 'device.config'

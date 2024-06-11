@@ -9,14 +9,14 @@ export const Wrapper = styled.ul(() => ({
   [`@media ${device.tablet}`]: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    ['> li']: {
+    '> li': {
       flexBasis: 'calc(50% - 12px)',
     },
   },
 
   [`@media ${device.desktop}`]: {
     flexDirection: 'row',
-    flexWrap: 'nowrap',
+    flexWrap: 'nowrap'
   },
 }))
 
