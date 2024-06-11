@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-`
+export const Wrapper = styled.ul(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 24
+}))
 
-export const Item = styled.li``
+export const Item = styled.li
