@@ -4,7 +4,6 @@ import { RenderWithTheme } from 'test-utils'
 import { Jobs } from './jobs'
 import { JobsService } from 'services'
 import { fetch } from 'utils'
-import { error } from 'console'
 import { JobList } from 'components/molecules'
 
 jest.mock('utils')
@@ -15,7 +14,8 @@ jest.mock('services', () => ({
 
 jest.mock('components/atoms', () => ({
   ...jest.requireActual('components/atoms'),
-  Loading: () => <>LOADING</>
+  Loading: () => <>LOADING</>,
+  Typography: ({ text }: { text: string }) => <>{text}</>
 }))
 
 jest.mock('components/molecules', () => ({
