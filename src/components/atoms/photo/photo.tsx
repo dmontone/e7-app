@@ -7,8 +7,8 @@ import * as S from './styles'
 type TPhoto = {
   src: string
   alt: string
-  width?: Dimensions
-  height?: Dimensions
+  width?: 'auto' | '100%' | number | [number, number, number]
+  height?: 'auto' | '100%' | number | [number, number, number]
 }
 
 export const Photo: FC<TPhoto> = ({ alt, src, width = 'auto', height = 'auto' }) => {

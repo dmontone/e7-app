@@ -1,6 +1,6 @@
 import styled, { css, MapToDollar } from 'styled-components'
 import { TTypography } from './typography'
-import { getFontSize } from 'utils'
+import { getSize } from 'utils'
 import { device } from 'device.config'
 
 type ContentType = MapToDollar<Partial<TTypography>>
@@ -14,9 +14,9 @@ export const Wrapper = styled.div<{ $margin?: number }>(({ $margin = 0 }) => ({
 
 export const Content = styled.div.attrs<ContentType>(({ $variant, $level = 1 }) => ({
   as: $variant === 'title' ? `h${$level}` : 'p'
-}))(({ theme, $color, $size = 16, $lineHeight = 0, $weight }) => {
-  const getSize = getFontSize($size)
-  const getLineHeight = getFontSize($lineHeight, getSize())
+}))(({ theme, $color, $size = 16, $lineHeight = 20, $weight }) => {
+  const getFontSize = getSize($size)
+  const getLineHeight = getSize($lineHeight)
 
   return {
     fontFamily: theme.text.font,
@@ -24,18 +24,18 @@ export const Content = styled.div.attrs<ContentType>(({ $variant, $level = 1 }) 
     flexDirection: 'column',
     gap: 4,
     color: theme.colors[$color as keyof typeof theme.colors],
-    fontSize: getSize(),
+    fontSize: getFontSize(),
     lineHeight: getLineHeight() + 'px',
     fontWeight: theme.text.weight[$weight as keyof typeof theme.text.weight],
 
     [`@media ${device.tablet}`]: {
-      fontSize: getSize(1),
-      lineHeight: getSize(1) + 'px',
+      fontSize: getFontSize(1),
+      lineHeight: getLineHeight(1) + 'px',
     },
 
     [`@media ${device.desktop}`]: {
-      fontSize: getSize(2),
-      lineHeight: getSize(2) + 'px',
+      fontSize: getFontSize(2),
+      lineHeight: getLineHeight(2) + 'px',
     },
   }
 })

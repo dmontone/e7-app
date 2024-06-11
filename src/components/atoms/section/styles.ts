@@ -1,3 +1,4 @@
+import { device } from 'device.config'
 import styled, { Colors } from 'styled-components'
 
 type TWrapper = {
