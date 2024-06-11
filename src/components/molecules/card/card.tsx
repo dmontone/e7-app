@@ -17,7 +17,7 @@ export const Card: FC<TCard> = ({ illustration, title, text, cta }) => {
     <S.Wrapper>
       <S.Illustration><Illustration type={illustration} /></S.Illustration>
       <Typography variant={'title'} level={3} size={24} text={title} weight='bold' />
-      <Typography variant={'text'} size={20} text={text} />
+      <Typography variant={'text'} size={20} lineHeight={28} align='center' text={text} />
       {cta && <Button onClick={cta.action}>{cta.text} <Icon type={'chevron-right'} /></Button>}
     </S.Wrapper>
   )

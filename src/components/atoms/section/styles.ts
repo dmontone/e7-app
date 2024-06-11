@@ -5,7 +5,7 @@ type TWrapper = {
   $bgcolor: Colors
 }
 
-export const Wrapper = styled.div<TWrapper>(({ theme, $bgcolor }) => ({
+export const Wrapper = styled.section<TWrapper>(({ theme, $bgcolor }) => ({
   backgroundColor: theme.colors[$bgcolor],
   padding: '40px 16px',
   display: 'flex',

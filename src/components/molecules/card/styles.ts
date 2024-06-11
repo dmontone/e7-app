@@ -1,3 +1,4 @@
+import { device } from 'device.config'
 import styled from 'styled-components'
 
 export const Wrapper = styled.article(() => ({
@@ -6,6 +7,10 @@ export const Wrapper = styled.article(() => ({
   justifyContent: 'center',
   alignItems: 'center',
   gap: 24,
+
+  [`@media ${device.desktop}`]: {
+    width: 430
+  }
 }))
 
 export const Illustration = styled.figure(({ theme }) => ({
