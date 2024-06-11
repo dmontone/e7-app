@@ -7,7 +7,7 @@ export const Filler = () => {
   const [isImageLoaded, setImageLoaded] = useState<boolean>(false)
 
   return (
-    <S.Wrapper isVisible={isImageLoaded}>
+    <S.Wrapper $isVisible={isImageLoaded}>
       <LazyLoadImage src={FillerImage} alt={'Lorem ipsum'} onLoad={() => setImageLoaded(true)} />
     </S.Wrapper>
   )

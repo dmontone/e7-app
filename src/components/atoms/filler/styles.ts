@@ -1,20 +1,24 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div<{ isVisible: boolean }>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 260px;
-  background-color: ${({theme}) => theme.colors.lightGray};
+type TWrapper = {
+  $isVisible: boolean
+}
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    opacity: ${({ isVisible }) => isVisible ? '1' : '0'};
-    transition: opacity 1s ease-out;
+export const Wrapper = styled.div<TWrapper>(({ theme, $isVisible }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%',
+  height: 260,
+  backgroundColor: theme.colors.lightGray,
+  
+  img: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    objectPosition: 'center',
+    display: 'block',
+    opacity: +$isVisible,
+    transition: 'opacity 1s ease-out'
   }
-`
+}))

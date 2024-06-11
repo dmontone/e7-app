@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
-  font-family: ${({ theme }) => theme.text.font};
-  size: ${({ theme }) => theme.text.size(10)};
-  font-weight: ${({ theme }) => theme.text.weight.semibold};
-  color: ${({ theme }) => theme.colors.cyan};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 26px;
-  width: 100%;
-  height: 48px;
-  line-height: 48px;
-`
+export const Wrapper = styled.div(({ theme }) => ({
+  fontFamily: theme.text.font,
+  fontWeight: theme.text.weight.semibold,
+  fontSize: 20,
+  lineHeight: 24,
+  color: theme.colors.cyan,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: 26,
+  width: '100%',
+  height: 48,
+}))

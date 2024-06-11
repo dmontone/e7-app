@@ -18,21 +18,21 @@ export const Jobs: FC = () => {
   return (
     <Section bgColor='white'>
       <S.Header>
-        <Typography variant='title' level={2} size={16} weight='bold' text='Vagas em aberto' />
+        <Typography variant='title' level={2} size={32} weight='bold' text='Vagas em aberto' />
         {jobs.isFetched && !jobs.error && <Search onSearch={setJobSearch} />}
       </S.Header>
-      <S.Content centralize={jobs.isFetching || jobs.error || !jobs.data.length}>
+      <S.Content $centralize={jobs.isFetching || jobs.error || !jobs.data.length}>
         {jobs.isFetching
           && <Loading />}
         
         {!jobs.isFetching
           && jobs.error
-          && <Typography size={8} color='gray' weight='bold' text='Houve um erro. Tente novamente mais tarde.' />}
+          && <Typography size={16} color='gray' weight='bold' text='Houve um erro. Tente novamente mais tarde.' />}
 
         {!jobs.isFetching
           && !jobs.error
           && jobs.data.length <= 0
-          && <Typography size={8} color='gray' weight='bold' text='Nenhuma vaga encontrada' />}
+          && <Typography size={16} color='gray' weight='bold' text='Nenhuma vaga encontrada' />}
           
         {!jobs.isFetching
           && !jobs.error

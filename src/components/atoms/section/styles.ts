@@ -4,10 +4,10 @@ type TWrapper = {
   $bgcolor: Colors
 }
 
-export const Wrapper = styled.div<TWrapper>`
-  background: ${({ theme, $bgcolor }) => theme.colors[$bgcolor]};
-  padding: 40px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-`
+export const Wrapper = styled.div<TWrapper>(({ theme, $bgcolor }) => ({
+  backgroundColor: theme.colors[$bgcolor],
+  padding: '40px 16px',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 40,
+}))

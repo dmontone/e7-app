@@ -1,24 +1,28 @@
 import styled, { Dimensions } from 'styled-components'
 
 type TWrapper = {
-  width: Dimensions
-  height: Dimensions
+  $width: Dimensions
+  $height: Dimensions
+  $isLoaded: boolean
 }
 
-export const Wrapper = styled.figure<TWrapper>`
-  border-radius: 16px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: ${({ width }) => typeof width === 'string' ? width : `${width}px`};
-  height: ${({ height }) => typeof height === 'string' ? height : `${height}px`};
+export const Wrapper = styled.figure<TWrapper>(({ theme, $width, $height, $isLoaded }) => ({
+  borderRadius: 16,
+  overflow: 'hidden',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: $width,
+  height: $height,
+  color: theme.colors.gray,
 
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+  img: {
+    width: '100%',
+    height: 'auto',
+    objectFit: 'cover',
+    objectPosition: 'center',
+    display: 'block',
+    opacity: +$isLoaded,
+    transition: 'opacity 0.5s ease-in-out',
   }
-`
+}))

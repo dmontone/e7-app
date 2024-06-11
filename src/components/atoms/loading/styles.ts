@@ -7,7 +7,7 @@ const animationSpin = keyframes`
 
 export const Wrapper = styled.div`
   & > * {
-    animation: ${animationSpin} 3s infinite linear;
+    animation: ${animationSpin} 2s infinite linear;
     color: ${({ theme }) => theme.colors.lightGrayColor};
   }
 `

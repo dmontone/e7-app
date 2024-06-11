@@ -15,7 +15,7 @@ export const Hero = styled.div`
   & > * { z-index: 2; }
 `
 
-export const HeroImage = styled.div<{ isVisible: boolean }>`
+export const HeroImage = styled.div<{ $isVisible: boolean }>`
   position: absolute;
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ export const HeroImage = styled.div<{ isVisible: boolean }>`
   width: 100%;
   height: 260px;
   background: ${({ theme }) => theme.colors.black};
-  opacity: ${({ isVisible }) => isVisible ? '1' : '0'};
+  opacity: ${({ $isVisible }) => +$isVisible};
   transition: opacity 1s ease-out;
 
   img {

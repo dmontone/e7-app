@@ -7,15 +7,16 @@ export type TTypography = {
   text: string
   variant?: 'title' | 'text'
   level?: 1 | 2 | 3
-  size?: 8 | 10 | 12 | 14 | 16
+  size?: number
   weight?: Weights
   color?: Colors
   lineHeight?: number
   subtitle?: string
+  margin?: number
 }
 
-export const Typography: FC<TTypography> = ({ text, subtitle, ...props }) =>
-  <S.Wrapper {...mapToDollar(props)}>
-    {text}
-    {props.variant === 'title' && subtitle && <S.Subtitle>{subtitle}</S.Subtitle>}
+export const Typography: FC<TTypography> = ({ text, subtitle, margin, ...props }) =>
+  <S.Wrapper $margin={margin}>
+    <S.Content {...mapToDollar(props)}>{text}</S.Content>
+    {props.variant === 'title' && subtitle && <S.Subtitle $size={props.size}>{subtitle}</S.Subtitle>}
   </S.Wrapper>

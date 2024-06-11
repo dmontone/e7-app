@@ -12,7 +12,7 @@ export const Team: FC = () => {
 
   return (
     <Section bgColor='white'>
-      <Typography variant='title' level={2} size={14} weight='semibold' text={'Conheça nosso time'} />
+      <Typography variant='title' level={2} size={28} weight='semibold' text={'Conheça nosso time'} />
       <MemberList members={members} />
     </Section>
   )
