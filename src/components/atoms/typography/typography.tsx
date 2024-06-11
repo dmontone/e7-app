@@ -7,10 +7,10 @@ export type TTypography = {
   text: string
   variant?: 'title' | 'text'
   level?: 1 | 2 | 3
-  size?: number
+  size?: number | [number, number, number]
   weight?: Weights
   color?: Colors
-  lineHeight?: number
+  lineHeight?: number | [number, number, number]
   subtitle?: string
   margin?: number
 }
