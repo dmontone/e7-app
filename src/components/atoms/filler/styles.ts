@@ -1,3 +1,4 @@
+import { device } from 'device.config'
 import styled from 'styled-components'
 
 type TWrapper = {
@@ -11,6 +12,10 @@ export const Wrapper = styled.div<TWrapper>(({ theme, $isVisible }) => ({
   width: '100%',
   height: 260,
   backgroundColor: theme.colors.lightGray,
+
+  [`@media ${device.desktop}`]: {
+    height: 385
+  },
   
   img: {
     width: '100%',
