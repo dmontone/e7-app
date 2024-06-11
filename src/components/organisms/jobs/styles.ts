@@ -1,17 +1,20 @@
 import styled, { css } from 'styled-components'
 
-export const Header = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-`
+export const Header = styled.div(() => ({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 24,
+}))
 
-export const Content = styled.div<{ $centralize: boolean }>`
-  min-height: 320px;
+export const Content = styled.div<{ $centralize: boolean }>(({ $centralize }) => {
+  const centralize = $centralize ? {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  } : {}
 
-  ${({ $centralize }) => $centralize && css`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `}
-`
+  return {
+    minHeight: 320,
+    ...centralize
+  }
+})

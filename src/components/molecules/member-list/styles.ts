@@ -6,4 +6,4 @@ export const Wrapper = styled.ul(() => ({
   gap: 24
 }))
 
-export const Item = styled.li
+export const Item = styled.li``

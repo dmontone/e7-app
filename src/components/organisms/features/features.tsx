@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import * as S from './styles'
 import { Card } from 'components/molecules'
 import { Section } from 'components/atoms'
 
