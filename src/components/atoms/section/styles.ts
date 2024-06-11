@@ -11,4 +11,12 @@ export const Wrapper = styled.div<TWrapper>(({ theme, $bgcolor }) => ({
   display: 'flex',
   flexDirection: 'column',
   gap: 40,
+
+  [`@media ${device.tablet}`]: {
+    padding: '60px 36px',
+  },
+
+  [`@media ${device.desktop}`]: {
+    padding: '80px 56px',
+  }
 }))

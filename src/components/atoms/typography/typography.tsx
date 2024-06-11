@@ -13,6 +13,7 @@ export type TTypography = {
   lineHeight?: number | [number, number, number]
   subtitle?: string
   margin?: number
+  align?: 'center'
 }
 
 export const Typography: FC<TTypography> = ({ text, subtitle, margin, ...props }) =>

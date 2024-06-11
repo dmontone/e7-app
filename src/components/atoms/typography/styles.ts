@@ -14,19 +14,20 @@ export const Wrapper = styled.div<{ $margin?: number }>(({ $margin = 0 }) => ({
 
 export const Content = styled.div.attrs<ContentType>(({ $variant, $level = 1 }) => ({
   as: $variant === 'title' ? `h${$level}` : 'p'
-}))(({ theme, $color, $size = 16, $lineHeight = 20, $weight }) => {
+}))(({ theme, $color, $size = 16, $lineHeight = 20, $weight, $align }) => {
   const getFontSize = getSize($size)
   const getLineHeight = getSize($lineHeight)
 
   return {
     fontFamily: theme.text.font,
+    fontSize: getFontSize(),
+    lineHeight: getLineHeight() + 'px',
+    textAlign: $align || 'left',
+    color: theme.colors[$color as keyof typeof theme.colors],
+    fontWeight: theme.text.weight[$weight as keyof typeof theme.text.weight],
     display: 'flex',
     flexDirection: 'column',
     gap: 4,
-    color: theme.colors[$color as keyof typeof theme.colors],
-    fontSize: getFontSize(),
-    lineHeight: getLineHeight() + 'px',
-    fontWeight: theme.text.weight[$weight as keyof typeof theme.text.weight],
 
     [`@media ${device.tablet}`]: {
       fontSize: getFontSize(1),
